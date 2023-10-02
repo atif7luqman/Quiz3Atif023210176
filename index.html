@@ -19,21 +19,25 @@
             font-weight: bold;
             color: #333;
             background-color: #f7f7f7;
+            width: 50%;
         }
 
         .linkedin {
             background-color: #fff;
             color: #1877F2;
+            border-radius: 30px;
         }
 
         .twitter {
             background-color: #fff;
             color: #1877F2;
+            border-radius: 30px;
         }
 
         .facebook {
             background-color: #fff ;
             color: #1877F2;
+            border-radius: 30px;
         }
 
         /* Style for the Font Awesome icons */
@@ -42,46 +46,104 @@
         .fa-facebook {
             margin-right: 5px;
         }
+
+        /* Center and justify contents */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Make the container take up the full viewport height */
+        }
+
+        /* Adjust the full-page background style */
+        .full-page-background {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column; /* Center the content vertically */
+            background-image: url('/assets/img/img1.png');
+            background-repeat: no-repeat;
+        }
+
+        /* Center the content horizontally */
+        .col-sm-12 {
+            text-align: center;
+        }
+
+        /* Set full page width */
+        .row {
+            width: 100%;
+        }
+
+        /* Center the content of the second div */
+        .col-sm-12:last-child {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('/assets/img/img2.png');
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
     </style>
 
     
 </head>
 <body>
-    <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-6" style="background-image: url('/assets/img/image.JPG');">
+            <div class="col-sm-12 col-md-6 full-page-background">
                 <!-- LinkedIn Login -->
-            <a href="https://www.linkedin.com/oauth/v2/authorization?
-                response_type=code&
-                client_id=YOUR_LINKEDIN_CLIENT_ID&
-                redirect_uri=YOUR_REDIRECT_URI&
-                state=YOUR_STATE"
-                class="login-button linkedin">
-                <i class="fab fa-linkedin"></i> Login with LinkedIn
-            </a>
+                <a href="https://www.linkedin.com/oauth/v2/authorization?
+                    response_type=code&
+                    client_id=YOUR_LINKEDIN_CLIENT_ID&
+                    redirect_uri=YOUR_REDIRECT_URI&
+                    state=YOUR_STATE"
+                    class="login-button linkedin">
+                    <i class="fab fa-linkedin"></i> Login with LinkedIn
+                </a>
 
-            <!-- Twitter Login -->
-            <a href="https://api.twitter.com/oauth/authenticate?
-                oauth_token=YOUR_TWITTER_OAUTH_TOKEN"
-                class="login-button twitter">
-                <i class="fab fa-twitter"></i> Login with Twitter
-            </a>
+                <!-- Twitter Login -->
+                <a href="https://api.twitter.com/oauth/authenticate?
+                    oauth_token=YOUR_TWITTER_OAUTH_TOKEN"
+                    class="login-button twitter">
+                    <i class="fab fa-twitter"></i> Login with Twitter
+                </a>
 
-            <!-- Facebook Login -->
-            <a href="https://www.facebook.com/v12.0/dialog/oauth?
-                client_id=YOUR_FACEBOOK_APP_ID&
-                redirect_uri=YOUR_REDIRECT_URI&
-                state=YOUR_STATE"
-                class="login-button facebook">
-                <i class="fab fa-facebook"></i> Login with Facebook
-            </a>
+                <!-- Facebook Login -->
+                <a href="https://www.facebook.com/v12.0/dialog/oauth?
+                    client_id=YOUR_FACEBOOK_APP_ID&
+                    redirect_uri=YOUR_REDIRECT_URI&
+                    state=YOUR_STATE"
+                    class="login-button facebook">
+                    <i class="fab fa-facebook"></i> Login with Facebook
+                </a>
             </div>
             <div class="col-sm-12 col-md-6">
-                <h1>hello world</h1>
+                <h1>Sign up</h1>
+                <p>Get started absolutely free.</p>
+
+                <form id="signup-form" action="your-server-endpoint.php" method="post">
+                    <div>
+                        <label for="email" style="text-align: left;">Email:</label>
+                        <br>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="password">Password:</label> 
+                        <br>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="human" name="human">
+                        <label for="human">Are you human?</label>
+                    </div>
+                    <div>
+                        <button type="submit" class=".login-button btn btn-primary">Sign Up</button>
+                    </div>
+                </form>
             </div>
         </div>
-        
-    </div>
-    
 </body>
 </html>
