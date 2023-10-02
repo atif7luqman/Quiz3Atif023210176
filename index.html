@@ -3,9 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Document</title>
+     <!-- Add styling for login buttons using CSS -->
+     <style>
+        .login-button {
+            display: block;
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #333;
+            background-color: #f7f7f7;
+        }
+
+        .linkedin {
+            background-color: #fff;
+            color: #1877F2;
+        }
+
+        .twitter {
+            background-color: #fff;
+            color: #1877F2;
+        }
+
+        .facebook {
+            background-color: #fff ;
+            color: #1877F2;
+        }
+
+        /* Style for the Font Awesome icons */
+        .fa-linkedin,
+        .fa-twitter,
+        .fa-facebook {
+            margin-right: 5px;
+        }
+    </style>
+
+    
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6" style="background-image: url('/assets/img/image.JPG');">
+                <!-- LinkedIn Login -->
+            <a href="https://www.linkedin.com/oauth/v2/authorization?
+                response_type=code&
+                client_id=YOUR_LINKEDIN_CLIENT_ID&
+                redirect_uri=YOUR_REDIRECT_URI&
+                state=YOUR_STATE"
+                class="login-button linkedin">
+                <i class="fab fa-linkedin"></i> Login with LinkedIn
+            </a>
+
+            <!-- Twitter Login -->
+            <a href="https://api.twitter.com/oauth/authenticate?
+                oauth_token=YOUR_TWITTER_OAUTH_TOKEN"
+                class="login-button twitter">
+                <i class="fab fa-twitter"></i> Login with Twitter
+            </a>
+
+            <!-- Facebook Login -->
+            <a href="https://www.facebook.com/v12.0/dialog/oauth?
+                client_id=YOUR_FACEBOOK_APP_ID&
+                redirect_uri=YOUR_REDIRECT_URI&
+                state=YOUR_STATE"
+                class="login-button facebook">
+                <i class="fab fa-facebook"></i> Login with Facebook
+            </a>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <h1>hello world</h1>
+            </div>
+        </div>
+        
+    </div>
     
 </body>
 </html>
